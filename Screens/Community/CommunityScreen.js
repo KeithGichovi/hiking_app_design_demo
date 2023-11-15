@@ -1,21 +1,13 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import JoinMembership from './JoinMembership';
 
 const CommunityScreen = () => {
     return (
-        <View style={styles.container}>
-            <Text>Welcome to the Community Screen!</Text>
-        </View>
+        
+        <JoinMembership/>
     );
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent:'center',
-    },
-});
+
 
 export default CommunityScreen;
