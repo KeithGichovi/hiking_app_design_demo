@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, ALert, Alert} from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
@@ -9,6 +9,29 @@ import { AntDesign } from '@expo/vector-icons';
 const TrailViewHeader = ({navigationfunc, modalFunc ,image, title, description, rating, est_time, description2}) => {
 
     const [time, setTime] = useState(est_time);
+    
+    const [saved, setSaved] = useState(false);
+
+    const handleSave = () => {  
+        setSaved(!saved);
+        
+        if(!saved){
+            Alert.alert(
+                'You have saved this trail.',
+                'You can view your saved trails osn your profile.', 
+                [
+                    {
+                        text: 'OK',
+                    
+                    },
+                ],
+                { 
+                    cancelable: false 
+                }
+            );
+        }
+        
+    }
 
     useEffect(
         ()=>{
@@ -47,12 +70,32 @@ const TrailViewHeader = ({navigationfunc, modalFunc ,image, title, description, 
                     style={styles.dots}
                     onPress={modalFunc}
                 />
-                <FontAwesome5 
-                    name="bookmark" 
-                    size={26} 
-                    color="#ffffff"
-                    style={styles.bookmark}
-                />
+
+                {
+                    saved ? (
+                        
+                        <Ionicons 
+                            name="md-checkmark-done-circle" 
+                            size={26} 
+                            color="#ffffff" 
+                            style={styles.bookmark} 
+                            onPress={handleSave}
+                        />
+
+                    ) : (
+                        
+                        <FontAwesome5 
+                            name="bookmark" 
+                            size={26} 
+                            color="#ffffff"
+                            style={styles.bookmark}
+                            onPress={handleSave}
+                        />
+
+                    )
+
+                }
+                
             </View>
             <View style={styles.container}>
                 <Text style={styles.title}>{title}</Text>

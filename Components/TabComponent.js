@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
 
 const TabComponent = ({image, text}) => {
+   
   return (
       <View style={styles.container}>
         <Image
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       height: '100%',
-      marginHorizontal: 20,
+      backgroundColor: '#fff',
       paddingVertical: 20,
       alignItems: 'center',
       justifyContent: 'center',
@@ -33,13 +34,13 @@ const styles = StyleSheet.create({
         flex: 1,
         resizeMode: 'cover',
         borderRadius: 5,
-        width: 400,
-        height: 400,
+        width: 250,
+        height: 250,
     },
     button:{
         marginVertical: 20,
         borderRadius: 12,
-        padding: 5,
+        padding: 12,
         backgroundColor: '#358f80',
     },
     buttonText:{

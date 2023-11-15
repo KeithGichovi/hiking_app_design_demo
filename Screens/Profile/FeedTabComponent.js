@@ -1,12 +1,13 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, Text } from 'react-native';
 import TabComponent from '../../Components/TabComponent';
+
 
 const FeedTabComponent = () => {
 
   const PageContentData = [
     {
-      text: 'Start a feed on the app!',
+      text: 'Start a feed!',
       image: require('../../assets/images/feed.png'),
     }
   ];

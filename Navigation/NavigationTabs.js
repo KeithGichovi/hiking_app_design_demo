@@ -1,6 +1,6 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import ProfileScreen from "../Screens/Profile/ProfileScreen";
+import ProfileTab from "./ProfileTab";
 import CommunityScreen from "../Screens/Community/CommunityScreen";
 import { Fontisto ,FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import MapStack from "./MapStack";
@@ -41,7 +41,7 @@ const NavigationTabs = () => {
                             tabBarIcon: ({ color, size }) => <Fontisto name="persons" size={size} color={color} />
                         }}
             />
-            <Tab.Screen name="Profile" component={ProfileScreen} 
+            <Tab.Screen name="Profile" component={ProfileTab} 
                 options={{ 
                     tabBarIcon: ({ color, size }) => <FontAwesome5 name="user-alt" size={size} color={color} /> 
                 }}

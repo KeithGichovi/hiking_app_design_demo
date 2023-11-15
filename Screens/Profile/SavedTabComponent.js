@@ -6,8 +6,9 @@ const SavedTabComponent = () => {
 
     const PageContentData = [
         {
-            text: 'Save your favorite Trails!',
+            text: 'Save Trails',
             image: require('../../assets/images/saved.png'),
+            
         }
     ];
 

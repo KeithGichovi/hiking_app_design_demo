@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
         width: 50,
     },
     achievement: {
-        paddingTop: 10,
+        paddingTop: 5,
         fontSize: 16,
         fontWeight: '500',
         color: 'white',

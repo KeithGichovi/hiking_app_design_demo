@@ -6,7 +6,7 @@ const PhotoTabComponent = () => {
 
   const PageContentData = [
     {
-      text: 'post your hiking Pictures!',
+      text: 'Post your Photos',
       image: require('../../assets/images/photo.png'),
     }
   ];

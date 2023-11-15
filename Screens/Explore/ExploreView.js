@@ -20,7 +20,7 @@ const PopularView = ({ navigation }) => {
                 keyExtractor={(item) => item.id}
                 renderItem={
                     ({ item }) => (
-                        <Suspense>
+                        <Suspense fallback={<LoadingFallback />}>
                             <ExploreCard 
                                 key={item.id}
                                 title={item.title}

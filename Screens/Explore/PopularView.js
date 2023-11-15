@@ -1,8 +1,7 @@
-import React, { lazy, Suspense } from 'react';
-import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, FlatList } from 'react-native';
 import popularData from '../../Api/popularData';
-
-const ExploreCard = lazy(() => import('../../Components/ExploreCard'));
+import ExploreCard from '../../Components/ExploreCard';
 
 
 const PopularView = ({ navigation }) => {
@@ -20,18 +19,17 @@ const PopularView = ({ navigation }) => {
                 keyExtractor={(item) => item.id}
                 renderItem={
                     ({ item }) => (
-                        <Suspense fallback={<LoadingFallback />}>
-                            <ExploreCard 
-                                key={item.id}
-                                title={item.title}
-                                description={item.description}
-                                rating={item.rating}
-                                distance={item.distance}
-                                est_time={item.est_time}
-                                image={item.image}
-                                onCardPress={() => navigation.navigate('Trailview', { marker: item })}
-                            />
-                        </Suspense>
+                        
+                        <ExploreCard 
+                            key={item.id}
+                            title={item.title}
+                            description={item.description}
+                            rating={item.rating}
+                            distance={item.distance}
+                            est_time={item.est_time}
+                            image={item.image}
+                            onCardPress={() => navigation.navigate('Trailview', { marker: item })}
+                        />
                     )
                 }
             />
@@ -39,11 +37,6 @@ const PopularView = ({ navigation }) => {
     );
 };
 
-const LoadingFallback = () => (
-    <View>
-        <ActivityIndicator size={20} color="#358f80" />
-    </View>
-);
 
 const styles = StyleSheet.create({
     container: {
