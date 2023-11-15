@@ -1,14 +1,15 @@
-import React from 'react';
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import React, { lazy, Suspense } from 'react';
+import { View, Text, StyleSheet, FlatList, ActivityIndicator } from 'react-native';
 import mapData from '../../Api/mapData';
-import ExploreCard from '../../Components/ExploreCard';
+
+const ExploreCard = lazy(() => import('../../Components/ExploreCard'));
 
 
 const PopularView = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <Text style={styles.title}>Nearby Areas</Text>
-            <Text style={styles.subtitle}>Find out what's trending around the world.</Text>
+            <Text style={styles.subtitle}>Have a look at the routes near you.</Text>
             <FlatList 
                 horizontal={true}
                 showsHorizontalScrollIndicator={false}
@@ -19,22 +20,31 @@ const PopularView = ({ navigation }) => {
                 keyExtractor={(item) => item.id}
                 renderItem={
                     ({ item }) => (
-                        <ExploreCard 
-                            key={item.id}
-                            title={item.title}
-                            description={item.description}
-                            rating={item.rating}
-                            distance={item.distance}
-                            est_time={item.est_time}
-                            image={item.image}
-                            onCardPress={() => navigation.navigate('Trailview', { marker: item })}
-                        />
+                        <Suspense>
+                            <ExploreCard 
+                                key={item.id}
+                                title={item.title}
+                                description={item.description}
+                                rating={item.rating}
+                                distance={item.distance}
+                                est_time={item.est_time}
+                                image={item.image}
+                                onCardPress={() => navigation.navigate('Trailview', { marker: item })}
+                            />
+                        </Suspense>
+                        
                     )
                 }
             />
         </View>
     );
 };
+
+const LoadingFallback = () => (
+    <View>
+        <ActivityIndicator size={20} color="#358f80" />
+    </View>
+);
 
 const styles = StyleSheet.create({
     container: {
