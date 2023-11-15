@@ -53,7 +53,9 @@ const TrailWeather = ({marker}) => {
       
         return formattedTime;
     }
-      
+
+
+
 
     return (
         <View style={styles.container}>
