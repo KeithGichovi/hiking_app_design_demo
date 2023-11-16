@@ -2,9 +2,15 @@ import React, {useState} from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 import { SimpleLineIcons } from '@expo/vector-icons';
 
-const Searchbar = () => {
+const SearchbarComponent = ({onSearch}) => {
 
     const [value, setValue] = useState('');
+
+    const [blur, setBlur] = useState(false);
+
+    const handleSearch = () => {
+        onSearch(value)
+    }
 
     return (
         <View style={styles.container}>
@@ -17,7 +23,7 @@ const Searchbar = () => {
                 clearButtonMode='always'
                 clearTextOnFocus={true}
                 autoCorrect={false}
-                onSubmitEditing={() => console.log(value)}
+                onSubmitEditing={handleSearch}
             />
             <SimpleLineIcons 
                 name="equalizer" 
@@ -53,4 +59,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default Searchbar;
+export default SearchbarComponent;

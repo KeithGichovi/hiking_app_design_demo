@@ -9,7 +9,7 @@ const mapData = [
         distance: 3.5,
         rating: 4.5,
         est_time: 45,
-        image: require('../assets/images/hiking.jpg'),
+        image: require('../assets/images/hiking8.jpg'),
         polyline: [
             { latitude: 50.721143820635994, longitude: -1.8436000538995827 },
             { latitude: 50.7215, longitude: -1.8439 },
@@ -184,7 +184,7 @@ const mapData = [
         distance: 18.2,
         rating: 2.7,
         est_time: 85,
-        image: require('../assets/images/hiking8.jpg'),
+        image: require('../assets/images/hiking.jpg'),
         polyline: [
             { latitude: 50.73695017414957, longitude: -1.8448875196757002 },
             { latitude: 50.7372, longitude: -1.8452 },

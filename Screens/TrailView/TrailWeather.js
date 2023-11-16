@@ -1,8 +1,6 @@
-import React, {useState, useEffect} from 'react';
-import {Text, View, StyleSheet, ScrollView} from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-
+import React, {useEffect, useState} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import {FontAwesome, MaterialCommunityIcons} from '@expo/vector-icons';
 
 
 const TrailWeather = ({marker}) => {
@@ -48,10 +46,8 @@ const TrailWeather = ({marker}) => {
         const formattedHours = hours % 12 || 12;
 
         const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
-      
-        const formattedTime = `${formattedHours}:${formattedMinutes} ${ampm}`;
-      
-        return formattedTime;
+
+        return `${formattedHours}:${formattedMinutes} ${ampm}`;
     }
 
 
