@@ -26,6 +26,7 @@ const ExploreView = ({ navigation }) => {
                 onSearch={handleSearch}
             />
 
+
             <View style={styles.container}>
                 <Text style={styles.title}>Nearby Areas</Text>
                 <Text style={styles.subtitle}>Have a look at the trails near you.</Text>
